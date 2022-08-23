@@ -16,8 +16,24 @@
         <p>Acabei de entrar num if feito em html</p>
     @endif
 
-        <p>Ola {{$nome}}, seu nome foi escrito através de uma var que veio de routes</p>
+{{--     O blade também permite pegar dados e imprimir na tela. Por exemplo:
+    As variáveis a seguir foram criadas em routes/web.php, e estmoas utilizando-as aqui
+    através da chave que foi passada n arry associativa.
+    Para usar um var no html.blade, é necessário o uso de {{}} e dentro você coloca o 
+    nome da chave que recebe o dado; --}}
+        <p>Ola {{$name}}, seu nome foi escrito através de uma var que veio de routes</p>
         <p>Sua idade é {{$idade}} anos e você trabalha com {{$trabalho}}</p>
+
+            {{-- Acessando dados de dentro de um arry --}}
+        @for($i = 0; $i < count($arr); $i++)
+            <p>{{$arr[$i]}} - {{$i}}</p>
+        @endfor
+
+        {{-- Executar puro php --}}
+        @php
+        $name = "Vitão";
+        echo $name;
+        @endphp
 
 
 </body>

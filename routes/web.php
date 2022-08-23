@@ -17,9 +17,13 @@ Route::get('/Home', function () {
     $nome = "vitin";
     $idade = 21;
     $trabalho = "programação";
-    return view('Home', ['nome' => $nome,
-                         'idade' => $idade,
-                         'trabalho' => $trabalho]);
+    $vetor = [1,2,3,4,5];
+    return view('Home', [
+                        'name' => $nome,
+                        'idade' => $idade,
+                        'trabalho' => $trabalho,
+                        'arr' => $vetor
+                        ]);
 });
 
 
